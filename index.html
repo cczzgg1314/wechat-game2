@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-    <meta charset="UTF-7">
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Ԫ���µ��ա�Ӯ����</title>
+    <title>元宵猜灯谜·赢好礼</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         * {
@@ -430,162 +430,162 @@
     <div class="container">
         <div class="header">
             <div class="lantern lantern-left"><i class="fas fa-lantern"></i></div>
-            <h1>Ԫ���µ��ա�Ӯ����</h1>
-            <p>�µ��գ�Ӯ�󽱣�����ϲϲ��Ԫ��</p>
+            <h1>元宵猜灯谜·赢好礼</h1>
+            <p>猜灯谜，赢大奖，欢欢喜喜庆元宵</p>
             <div class="lantern lantern-right"><i class="fas fa-lantern"></i></div>
         </div>
         
         <div class="content">
-            <!-- �û���Ϣҳ�� -->
+            <!-- 用户信息页面 -->
             <div id="page-user-info" class="page active">
                 <div class="rules">
-                    <h3><i class="fas fa-info-circle"></i> �����</h3>
+                    <h3><i class="fas fa-info-circle"></i> 活动规则</h3>
                     <ul>
-                        <li>ÿ�˽��޲���һ�Σ�����ʵ��д��Ϣ</li>
-                        <li>��10��������Ŀ��ÿ����10�֣�����100��</li>
-                        <li>�÷�80�����ϼ��ɲ���齱</li>
-                        <li>�������ã�һ�Ƚ�10�������Ƚ�10�������Ƚ�10����лл��������</li>
-                        <li>����ս���Ȩ�����췽����</li>
+                        <li>每人仅限参与一次，请如实填写信息</li>
+                        <li>共10道灯谜题目，每道题10分，满分100分</li>
+                        <li>得分80分以上即可参与抽奖</li>
+                        <li>奖项设置：一等奖10名，二等奖10名，三等奖10名，谢谢参与若干</li>
+                        <li>活动最终解释权归主办方所有</li>
                     </ul>
                 </div>
                 
-                <h2><i class="fas fa-user-circle"></i> ��д������Ϣ</h2>
-                <p style="margin-bottom: 20px; color: #666;">����д������Ϣ���Ա�������ϵ�����Ž�Ʒ</p>
+                <h2><i class="fas fa-user-circle"></i> 填写参与信息</h2>
+                <p style="margin-bottom: 20px; color: #666;">请填写以下信息，以便我们联系您发放奖品</p>
                 
                 <div class="form-group">
-                    <label for="user-name"><i class="fas fa-user"></i> ����</label>
-                    <input type="text" id="user-name" class="form-control" placeholder="��������������">
+                    <label for="user-name"><i class="fas fa-user"></i> 姓名</label>
+                    <input type="text" id="user-name" class="form-control" placeholder="请输入您的姓名">
                 </div>
                 
                 <div class="form-group">
-                    <label for="user-phone"><i class="fas fa-phone"></i> �ֻ�����</label>
-                    <input type="tel" id="user-phone" class="form-control" placeholder="�����������ֻ�����">
+                    <label for="user-phone"><i class="fas fa-phone"></i> 手机号码</label>
+                    <input type="tel" id="user-phone" class="form-control" placeholder="请输入您的手机号码">
                 </div>
                 
                 <div class="form-group">
-                    <label for="user-department"><i class="fas fa-building"></i> ����/��λ</label>
-                    <input type="text" id="user-department" class="form-control" placeholder="���������Ĳ��Ż�λ">
+                    <label for="user-department"><i class="fas fa-building"></i> 部门/单位</label>
+                    <input type="text" id="user-department" class="form-control" placeholder="请输入您的部门或单位">
                 </div>
                 
-                <button id="btn-start" class="btn">��ʼ�µ���</button>
+                <button id="btn-start" class="btn">开始猜灯谜</button>
                 
                 <div class="footer">
-                    <p>��������ڲ�Ա�����룬ÿ�˽���һ�λ���</p>
+                    <p>本活动仅限内部员工参与，每人仅限一次机会</p>
                 </div>
             </div>
             
-            <!-- ����ҳ�� -->
+            <!-- 答题页面 -->
             <div id="page-quiz" class="page">
                 <div class="progress-bar">
                     <div id="quiz-progress" class="progress"></div>
                 </div>
-                <div class="progress-text" id="progress-text">��1�� / ��10��</div>
+                <div class="progress-text" id="progress-text">第1题 / 共10题</div>
                 
                 <div id="question-container"></div>
                 
-                <button id="btn-next" class="btn" disabled>��һ��</button>
-                <button id="btn-submit" class="btn hidden">�ύ��</button>
+                <button id="btn-next" class="btn" disabled>下一题</button>
+                <button id="btn-submit" class="btn hidden">提交答案</button>
             </div>
             
-            <!-- ������ҳ�� -->
+            <!-- 答题结果页面 -->
             <div id="page-result" class="page">
                 <div class="result">
-                    <h2><i class="fas fa-award"></i> ������</h2>
+                    <h2><i class="fas fa-award"></i> 答题结果</h2>
                     <div class="score" id="final-score">0</div>
                     <div class="result-message" id="result-message"></div>
                     
                     <div id="lottery-eligible" class="hidden">
-                        <p>��ϲ����ó齱�ʸ�</p>
-                        <button id="btn-lottery" class="btn lottery-btn">�����齱</button>
+                        <p>恭喜您获得抽奖资格！</p>
+                        <button id="btn-lottery" class="btn lottery-btn">立即抽奖</button>
                     </div>
                     
                     <div id="lottery-not-eligible" class="hidden">
-                        <p>���ź�����δ�ﵽ�齱�����ߣ�80�֣�</p>
-                        <button id="btn-view-winners" class="btn">�鿴������</button>
+                        <p>很遗憾，您未达到抽奖分数线（80分）</p>
+                        <button id="btn-view-winners" class="btn">查看获奖名单</button>
                     </div>
                 </div>
             </div>
             
-            <!-- �齱ҳ�� -->
+            <!-- 抽奖页面 -->
             <div id="page-lottery" class="page">
                 <div class="lottery-container">
-                    <h2><i class="fas fa-gift"></i> ���˳齱</h2>
-                    <p>�����ʼ��ť���������������</p>
+                    <h2><i class="fas fa-gift"></i> 幸运抽奖</h2>
+                    <p>点击开始按钮，试试你的手气！</p>
                     
                     <div class="lottery-wheel" id="lottery-wheel">
                         <div class="lottery-pointer"></div>
                     </div>
                     
-                    <button id="btn-start-lottery" class="btn">��ʼ�齱</button>
-                    <button id="btn-view-result" class="btn hidden">�鿴�齱���</button>
+                    <button id="btn-start-lottery" class="btn">开始抽奖</button>
+                    <button id="btn-view-result" class="btn hidden">查看抽奖结果</button>
                 </div>
             </div>
             
-            <!-- �齱���ҳ�� -->
+            <!-- 抽奖结果页面 -->
             <div id="page-prize" class="page">
                 <div class="prize">
-                    <h2><i class="fas fa-trophy"></i> ��ϲ�����</h2>
-                    <div class="prize-name" id="prize-name">лл����</div>
-                    <p id="prize-desc">��л���Ĳ��룬���ע�����</p>
+                    <h2><i class="fas fa-trophy"></i> 恭喜您获得</h2>
+                    <div class="prize-name" id="prize-name">谢谢参与</div>
+                    <p id="prize-desc">感谢您的参与，请关注后续活动</p>
                     
                     <div class="rules">
-                        <h3><i class="fas fa-gift"></i> ��Ʒ��ȡ˵��</h3>
+                        <h3><i class="fas fa-gift"></i> 奖品领取说明</h3>
                         <ul>
-                            <li>һ���������Ƚ��������ƾ�ֻ����뵽��������ȡ��Ʒ</li>
-                            <li>��ȡʱ�䣺3��1��-3��5�� 9:00-17:00</li>
-                            <li>��ȡ�ص㣺��˾�������칫��</li>
-                            <li>��ѯ�绰��13800138000</li>
+                            <li>一、二、三等奖获得者请凭手机号码到行政部领取奖品</li>
+                            <li>领取时间：3月1日-3月5日 9:00-17:00</li>
+                            <li>领取地点：公司行政部办公室</li>
+                            <li>咨询电话：13800138000</li>
                         </ul>
                     </div>
                     
-                    <button id="btn-back-to-home" class="btn">������ҳ</button>
-                    <button id="btn-admin" class="btn">����Ա���</button>
+                    <button id="btn-back-to-home" class="btn">返回首页</button>
+                    <button id="btn-admin" class="btn">管理员入口</button>
                 </div>
             </div>
             
-            <!-- ����Ա����ͳ��ҳ�� -->
+            <!-- 管理员数据统计页面 -->
             <div id="page-admin" class="page">
                 <div class="admin-section">
-                    <h2 class="admin-title"><i class="fas fa-chart-bar"></i> ����ͳ��</h2>
+                    <h2 class="admin-title"><i class="fas fa-chart-bar"></i> 数据统计</h2>
                     
                     <div class="stats">
                         <div class="stat-card">
                             <div class="stat-value" id="total-participants">0</div>
-                            <div class="stat-label">�ܲ�������</div>
+                            <div class="stat-label">总参与人数</div>
                         </div>
                         <div class="stat-card">
                             <div class="stat-value" id="avg-score">0</div>
-                            <div class="stat-label">ƽ���÷�</div>
+                            <div class="stat-label">平均得分</div>
                         </div>
                         <div class="stat-card">
                             <div class="stat-value" id="lottery-eligible-count">0</div>
-                            <div class="stat-label">�齱�ʸ�����</div>
+                            <div class="stat-label">抽奖资格人数</div>
                         </div>
                         <div class="stat-card">
                             <div class="stat-value" id="prizes-left">30</div>
-                            <div class="stat-label">ʣ�ཱƷ��</div>
+                            <div class="stat-label">剩余奖品数</div>
                         </div>
                     </div>
                     
-                    <h3 class="admin-title"><i class="fas fa-crown"></i> ����Ա����</h3>
+                    <h3 class="admin-title"><i class="fas fa-crown"></i> 获奖人员名单</h3>
                     
                     <div class="form-group">
-                        <input type="password" id="admin-password" class="form-control" placeholder="���������Ա����鿴����">
-                        <button id="btn-view-details" class="btn">�鿴����</button>
+                        <input type="password" id="admin-password" class="form-control" placeholder="请输入管理员密码查看详情">
+                        <button id="btn-view-details" class="btn">查看详情</button>
                     </div>
                     
                     <div id="winners-container" class="winners-list hidden">
-                        <!-- �������������ﶯ̬���� -->
+                        <!-- 获奖名单将在这里动态生成 -->
                     </div>
                     
-                    <button id="btn-back-to-game" class="btn">������Ϸ</button>
+                    <button id="btn-back-to-game" class="btn">返回游戏</button>
                 </div>
             </div>
         </div>
     </div>
 
     <script>
-        // ��Ϸ����
+        // 游戏数据
         const gameData = {
             currentUser: null,
             currentQuestion: 0,
@@ -595,73 +595,73 @@
             isAdmin: false
         };
 
-        // ������Ŀ
+        // 灯谜题目
         const riddles = [
             {
-                question: "����ϸ�����ֵܳ�˫���Ⱞ�Բˣ���������������һ�;ߣ�",
-                options: ["����", "����", "����", "����"],
+                question: "身体细长，兄弟成双，光爱吃菜，不爱喝汤。（打一餐具）",
+                options: ["筷子", "勺子", "叉子", "刀子"],
                 answer: 0
             },
             {
-                question: "һ��С�������ˮ���룬�����ۺ����������̴��ϡ�����һֲ�",
-                options: ["�ɻ�", "�һ�", "�ջ�", "÷��"],
+                question: "一个小姑娘，生在水中央，身穿粉红衫，坐在绿船上。（打一植物）",
+                options: ["荷花", "桃花", "菊花", "梅花"],
                 answer: 0
             },
             {
-                question: "��ɫ����ѩ������Ӳ������һ��ϴ���飬ҹ������Ъ������һ�;ߣ�",
-                options: ["��", "����", "����", "����"],
+                question: "颜色白如雪，身子硬如铁，一日洗三遍，夜晚柜中歇。（打一餐具）",
+                options: ["碗", "盘子", "勺子", "筷子"],
                 answer: 0
             },
             {
-                question: "����û�пڣ��н�û���֣�������ֻ�ţ��Լ������ߡ�����һ�Ҿߣ�",
-                options: ["����", "����", "��", "����"],
+                question: "有面没有口，有脚没有手，虽有四只脚，自己不会走。（打一家具）",
+                options: ["桌子", "椅子", "床", "柜子"],
                 answer: 0
             },
             {
-                question: "����С������ϴ�贵���ݣ�ϴϴ����С����ϴ�����ˡ�����һ�",
-                options: ["����", "��ԡ¶", "����", "ϴ�·�"],
+                question: "白嫩小宝宝，洗澡吹泡泡，洗洗身体小，再洗不见了。（打一物）",
+                options: ["肥皂", "沐浴露", "香皂", "洗衣粉"],
                 answer: 2
             },
             {
-                question: "���������ѣ�����ˮ�����������Ӷ��࣬���������š�����һˮ����",
-                options: ["����", "����", "����", "ƻ��"],
+                question: "身穿绿衣裳，肚里水汪汪，生的子儿多，个个黑脸膛。（打一水果）",
+                options: ["西瓜", "葡萄", "桃子", "苹果"],
                 answer: 0
             },
             {
-                question: "�Ǳʲ��ܻ����͵���һ�ң�Ҫ֪���޵磬��ȥ�����������һ�",
-                options: ["�Ե��", "�ֱ�", "Ǧ��", "ë��"],
+                question: "是笔不能画，和电是一家，要知有无电，可去请教它。（打一物）",
+                options: ["试电笔", "钢笔", "铅笔", "毛笔"],
                 answer: 0
             },
             {
-                question: "��ֻ��Ы�ӣ������ƺ��ӣ�ץ�Ӷǳ��ӣ����������ӡ�����һ������",
-                options: ["����", "����", "����", "����"],
+                question: "象只大蝎子，抱起似孩子，抓挠肚肠子，唱出好曲子。（打一乐器）",
+                options: ["琵琶", "吉他", "二胡", "古筝"],
                 answer: 0
             },
             {
-                question: "ԲͲ�׽�����������һ�ɣ��ֵ���ʮ������˵�кô�������һ������Ʒ��",
-                options: ["����", "ϴ����", "ϴ��ˮ", "��ԡ¶"],
+                question: "圆筒白浆糊，早晚挤一股，兄弟三十二，都说有好处。（打一生活用品）",
+                options: ["牙膏", "洗面奶", "洗发水", "沐浴露"],
                 answer: 0
             },
             {
-                question: "�ϲ���ˮ���²��»𣻼Ҽҳ���������һ��������һ������Ʒ��",
-                options: ["��", "��", "��", "��"],
+                question: "上不怕水，下不怕火；家家厨房，都有一个。（打一生活用品）",
+                options: ["锅", "碗", "盆", "刀"],
                 answer: 0
             }
         ];
 
-        // ��Ʒ����
+        // 奖品设置
         const prizes = [
-            { name: "һ�Ƚ�", count: 10, color: "#FFD700" },
-            { name: "���Ƚ�", count: 10, color: "#C0C0C0" },
-            { name: "���Ƚ�", count: 10, color: "#CD7F32" },
-            { name: "лл����", count: Infinity, color: "#4CAF50" }
+            { name: "一等奖", count: 10, color: "#FFD700" },
+            { name: "二等奖", count: 10, color: "#C0C0C0" },
+            { name: "三等奖", count: 10, color: "#CD7F32" },
+            { name: "谢谢参与", count: Infinity, color: "#4CAF50" }
         ];
 
-        // �洢���в���������
+        // 存储所有参与者数据
         let participants = JSON.parse(localStorage.getItem('lanternRiddleParticipants') || '[]');
         let winners = JSON.parse(localStorage.getItem('lanternRiddleWinners') || '[]');
         
-        // ��ʼ���齱ת��
+        // 初始化抽奖转盘
         function initLotteryWheel() {
             const wheel = document.getElementById('lottery-wheel');
             wheel.innerHTML = '<div class="lottery-pointer"></div>';
@@ -679,18 +679,18 @@
             });
         }
 
-        // ҳ���л�����
+        // 页面切换函数
         function showPage(pageId) {
-            // ��������ҳ��
+            // 隐藏所有页面
             document.querySelectorAll('.page').forEach(page => {
                 page.classList.remove('active');
             });
             
-            // ��ʾĿ��ҳ��
+            // 显示目标页面
             document.getElementById(pageId).classList.add('active');
         }
 
-        // ��ʼ���û���Ϣҳ��
+        // 初始化用户信息页面
         function initUserInfoPage() {
             document.getElementById('btn-start').addEventListener('click', () => {
                 const name = document.getElementById('user-name').value.trim();
@@ -698,25 +698,25 @@
                 const department = document.getElementById('user-department').value.trim();
                 
                 if (!name || !phone || !department) {
-                    alert('����д������Ϣ');
+                    alert('请填写完整信息');
                     return;
                 }
                 
-                // ����ֻ��Ÿ�ʽ
+                // 检查手机号格式
                 const phoneRegex = /^1[3-9]\d{9}$/;
                 if (!phoneRegex.test(phone)) {
-                    alert('��������Ч���ֻ�����');
+                    alert('请输入有效的手机号码');
                     return;
                 }
                 
-                // ����Ƿ��Ѳ���
+                // 检查是否已参与
                 const hasParticipated = participants.some(p => p.phone === phone);
                 if (hasParticipated) {
-                    alert('���ֻ����Ѳ�������ÿ�˽���һ�λ���');
+                    alert('该手机号已参与过活动，每人仅限一次机会');
                     return;
                 }
                 
-                // �����û���Ϣ
+                // 保存用户信息
                 gameData.currentUser = {
                     name,
                     phone,
@@ -724,33 +724,33 @@
                     id: Date.now().toString() + Math.random().toString(36).substr(2, 9)
                 };
                 
-                // ��ʼ����������
+                // 初始化答题数据
                 gameData.currentQuestion = 0;
                 gameData.userAnswers = [];
                 gameData.score = 0;
                 
-                // �������ҳ��
+                // 进入答题页面
                 showPage('page-quiz');
                 loadQuestion();
             });
         }
 
-        // ������Ŀ
+        // 加载题目
         function loadQuestion() {
             const question = riddles[gameData.currentQuestion];
             const container = document.getElementById('question-container');
             const progress = document.getElementById('quiz-progress');
             const progressText = document.getElementById('progress-text');
             
-            // ���½�����
+            // 更新进度条
             const progressPercent = ((gameData.currentQuestion + 1) / riddles.length) * 100;
             progress.style.width = `${progressPercent}%`;
-            progressText.textContent = `��${gameData.currentQuestion + 1}�� / ��${riddles.length}��`;
+            progressText.textContent = `第${gameData.currentQuestion + 1}题 / 共${riddles.length}题`;
             
-            // ������ĿHTML
+            // 构建题目HTML
             container.innerHTML = `
                 <div class="question">
-                    <div class="question-number">���� ${gameData.currentQuestion + 1}</div>
+                    <div class="question-number">灯谜 ${gameData.currentQuestion + 1}</div>
                     <div class="question-text">${question.question}</div>
                     <div class="options">
                         ${question.options.map((option, index) => `
@@ -760,26 +760,26 @@
                 </div>
             `;
             
-            // ����ѡ�����¼�
+            // 添加选项点击事件
             document.querySelectorAll('.option').forEach(option => {
                 option.addEventListener('click', function() {
-                    // �Ƴ�����ѡ���ѡ��״̬
+                    // 移除其他选项的选中状态
                     document.querySelectorAll('.option').forEach(opt => {
                         opt.classList.remove('selected');
                     });
                     
-                    // ѡ�е�ǰѡ��
+                    // 选中当前选项
                     this.classList.add('selected');
                     
-                    // ������һ�ⰴť
+                    // 启用下一题按钮
                     document.getElementById('btn-next').disabled = false;
                     
-                    // �����û���
+                    // 保存用户答案
                     gameData.userAnswers[gameData.currentQuestion] = parseInt(this.dataset.index);
                 });
             });
             
-            // ��������һ�⣬��ʾ�ύ��ť
+            // 如果是最后一题，显示提交按钮
             if (gameData.currentQuestion === riddles.length - 1) {
                 document.getElementById('btn-next').classList.add('hidden');
                 document.getElementById('btn-submit').classList.remove('hidden');
@@ -788,7 +788,7 @@
                 document.getElementById('btn-submit').classList.add('hidden');
             }
             
-            // ���֮ǰ�Ѿ�ѡ������⣬�ָ�ѡ��״̬
+            // 如果之前已经选择过此题，恢复选择状态
             if (gameData.userAnswers[gameData.currentQuestion] !== undefined) {
                 const selectedOption = document.querySelector(`.option[data-index="${gameData.userAnswers[gameData.currentQuestion]}"]`);
                 if (selectedOption) {
@@ -798,11 +798,11 @@
             }
         }
 
-        // ��ʼ������ҳ��
+        // 初始化答题页面
         function initQuizPage() {
             document.getElementById('btn-next').addEventListener('click', () => {
                 if (gameData.userAnswers[gameData.currentQuestion] === undefined) {
-                    alert('��ѡ���');
+                    alert('请选择答案');
                     return;
                 }
                 
@@ -812,11 +812,11 @@
             
             document.getElementById('btn-submit').addEventListener('click', () => {
                 if (gameData.userAnswers[gameData.currentQuestion] === undefined) {
-                    alert('��ѡ���');
+                    alert('请选择答案');
                     return;
                 }
                 
-                // ����÷�
+                // 计算得分
                 gameData.score = 0;
                 gameData.userAnswers.forEach((answer, index) => {
                     if (answer === riddles[index].answer) {
@@ -824,7 +824,7 @@
                     }
                 });
                 
-                // �����û�����
+                // 保存用户数据
                 const userData = {
                     ...gameData.currentUser,
                     answers: gameData.userAnswers,
@@ -835,12 +835,12 @@
                 participants.push(userData);
                 localStorage.setItem('lanternRiddleParticipants', JSON.stringify(participants));
                 
-                // ��ʾ���ҳ��
+                // 显示结果页面
                 showResultPage();
             });
         }
 
-        // ��ʾ���ҳ��
+        // 显示结果页面
         function showResultPage() {
             const finalScore = document.getElementById('final-score');
             const resultMessage = document.getElementById('result-message');
@@ -850,62 +850,62 @@
             finalScore.textContent = gameData.score;
             
             if (gameData.score >= 80) {
-                resultMessage.textContent = `��ϲ�������${gameData.score/10}���⣬���${gameData.score}�֣��ﵽ�齱�ʸ�`;
+                resultMessage.textContent = `恭喜您答对了${gameData.score/10}道题，获得${gameData.score}分，达到抽奖资格！`;
                 lotteryEligible.classList.remove('hidden');
                 lotteryNotEligible.classList.add('hidden');
             } else {
-                resultMessage.textContent = `�������${gameData.score/10}���⣬���${gameData.score}�֣�δ�ﵽ�齱�ʸ�80�֣���`;
+                resultMessage.textContent = `您答对了${gameData.score/10}道题，获得${gameData.score}分，未达到抽奖资格（80分）。`;
                 lotteryEligible.classList.add('hidden');
                 lotteryNotEligible.classList.remove('hidden');
             }
             
             showPage('page-result');
             
-            // �󶨳齱��ť�¼�
+            // 绑定抽奖按钮事件
             document.getElementById('btn-lottery').addEventListener('click', () => {
                 showPage('page-lottery');
             });
             
-            // �󶨲鿴��������ť�¼�
+            // 绑定查看获奖名单按钮事件
             document.getElementById('btn-view-winners').addEventListener('click', () => {
                 showAdminPage();
             });
         }
 
-        // �齱����
+        // 抽奖函数
         function performLottery() {
             const user = gameData.currentUser;
             
-            // ����Ƿ��ѳ齱
+            // 检查是否已抽奖
             const alreadyWon = winners.some(w => w.phone === user.phone);
             if (alreadyWon) {
-                alert('���Ѿ�������ˣ�ÿ�˽���һ��');
+                alert('您已经抽过奖了，每人仅限一次');
                 return null;
             }
             
-            // ���������ʣ������
+            // 计算各奖项剩余数量
             const prizeCounts = prizes.map(prize => {
-                if (prize.name === "лл����") return Infinity;
+                if (prize.name === "谢谢参与") return Infinity;
                 
                 const wonCount = winners.filter(w => w.prize === prize.name).length;
                 return Math.max(0, prize.count - wonCount);
             });
             
-            // ���һ���������Ƚ����ѳ��ֱ꣬�ӷ���"лл����"
+            // 如果一、二、三等奖都已抽完，直接返回"谢谢参与"
             if (prizeCounts[0] + prizeCounts[1] + prizeCounts[2] === 0) {
-                return prizes[3]; // лл����
+                return prizes[3]; // 谢谢参与
             }
             
-            // ����ʣ�ཱƷ��������Ȩ��
+            // 根据剩余奖品数量计算权重
             const weights = prizeCounts.map(count => {
-                if (count === Infinity) return 1; // лл�����Ȩ��
-                return count * 10; // ʵ�ʽ�Ʒ��Ȩ�ظ���
+                if (count === Infinity) return 1; // 谢谢参与的权重
+                return count * 10; // 实际奖品的权重更高
             });
             
-            // ������Ȩ��
+            // 计算总权重
             const totalWeight = weights.reduce((sum, weight) => sum + weight, 0);
             
-            // ���ѡ��Ʒ
+            // 随机选择奖品
             let random = Math.random() * totalWeight;
             let selectedPrizeIndex = 0;
             
@@ -920,34 +920,34 @@
             return prizes[selectedPrizeIndex];
         }
 
-        // ��ʼ���齱ҳ��
+        // 初始化抽奖页面
         function initLotteryPage() {
             initLotteryWheel();
             
             document.getElementById('btn-start-lottery').addEventListener('click', () => {
                 const btn = document.getElementById('btn-start-lottery');
                 btn.disabled = true;
-                btn.textContent = '�齱��...';
+                btn.textContent = '抽奖中...';
                 
-                // ִ�г齱
+                // 执行抽奖
                 const prize = performLottery();
                 
                 if (!prize) {
                     btn.disabled = false;
-                    btn.textContent = '��ʼ�齱';
+                    btn.textContent = '开始抽奖';
                     return;
                 }
                 
-                // ����ת��ֹͣλ��
+                // 计算转盘停止位置
                 const prizeIndex = prizes.findIndex(p => p.name === prize.name);
                 const anglePerPrize = 360 / prizes.length;
                 const targetAngle = 3600 + (prizeIndex * anglePerPrize) - (anglePerPrize / 2);
                 
-                // ��תת��
+                // 旋转转盘
                 const wheel = document.getElementById('lottery-wheel');
                 wheel.style.transform = `rotate(${targetAngle}deg)`;
                 
-                // ����񽱽��
+                // 保存获奖结果
                 const winner = {
                     ...gameData.currentUser,
                     prize: prize.name,
@@ -957,7 +957,7 @@
                 winners.push(winner);
                 localStorage.setItem('lanternRiddleWinners', JSON.stringify(winners));
                 
-                // �ӳ���ʾ���
+                // 延迟显示结果
                 setTimeout(() => {
                     showPrizePage(prize);
                 }, 3500);
@@ -968,7 +968,7 @@
             });
         }
 
-        // ��ʾ��Ʒҳ��
+        // 显示奖品页面
         function showPrizePage(prize) {
             const prizeName = document.getElementById('prize-name');
             const prizeDesc = document.getElementById('prize-desc');
@@ -976,24 +976,24 @@
             if (prize) {
                 prizeName.textContent = prize.name;
                 
-                if (prize.name === "лл����") {
-                    prizeDesc.textContent = "��л���Ĳ��룬���ע�����";
+                if (prize.name === "谢谢参与") {
+                    prizeDesc.textContent = "感谢您的参与，请关注后续活动";
                 } else {
-                    prizeDesc.textContent = `��ϲ�����${prize.name}����ƾ�ֻ����뵽��������ȡ��Ʒ��`;
+                    prizeDesc.textContent = `恭喜您获得${prize.name}！请凭手机号码到行政部领取奖品。`;
                 }
             }
             
             showPage('page-prize');
             
-            // �󶨷�����ҳ��ť�¼�
+            // 绑定返回首页按钮事件
             document.getElementById('btn-back-to-home').addEventListener('click', () => {
-                // ������Ϸ����
+                // 重置游戏数据
                 gameData.currentUser = null;
                 gameData.currentQuestion = 0;
                 gameData.userAnswers = [];
                 gameData.score = 0;
                 
-                // �����û���Ϣҳ��
+                // 返回用户信息页面
                 document.getElementById('user-name').value = '';
                 document.getElementById('user-phone').value = '';
                 document.getElementById('user-department').value = '';
@@ -1001,32 +1001,32 @@
                 showPage('page-user-info');
             });
             
-            // �󶨹���Ա��ڰ�ť�¼�
+            // 绑定管理员入口按钮事件
             document.getElementById('btn-admin').addEventListener('click', () => {
                 showAdminPage();
             });
         }
 
-        // ��ʾ����Աҳ��
+        // 显示管理员页面
         function showAdminPage() {
             updateAdminStats();
             showPage('page-admin');
             
-            // �󶨲鿴���鰴ť�¼�
+            // 绑定查看详情按钮事件
             document.getElementById('btn-view-details').addEventListener('click', () => {
                 const password = document.getElementById('admin-password').value;
                 
-                // ��������֤
+                // 简单密码验证
                 if (password === 'admin123') {
                     gameData.isAdmin = true;
                     document.getElementById('winners-container').classList.remove('hidden');
                     loadWinnersList();
                 } else {
-                    alert('�������');
+                    alert('密码错误');
                 }
             });
             
-            // �󶨷�����Ϸ��ť�¼�
+            // 绑定返回游戏按钮事件
             document.getElementById('btn-back-to-game').addEventListener('click', () => {
                 if (gameData.currentUser) {
                     showPrizePage();
@@ -1036,38 +1036,38 @@
             });
         }
 
-        // ���¹���Աͳ������
+        // 更新管理员统计数据
         function updateAdminStats() {
-            // �ܲ�������
+            // 总参与人数
             document.getElementById('total-participants').textContent = participants.length;
             
-            // ƽ���÷�
+            // 平均得分
             const avgScore = participants.length > 0 
                 ? (participants.reduce((sum, p) => sum + p.score, 0) / participants.length).toFixed(1)
                 : 0;
             document.getElementById('avg-score').textContent = avgScore;
             
-            // �齱�ʸ�����
+            // 抽奖资格人数
             const eligibleCount = participants.filter(p => p.score >= 80).length;
             document.getElementById('lottery-eligible-count').textContent = eligibleCount;
             
-            // ʣ�ཱƷ��
+            // 剩余奖品数
             const firstPrizeLeft = Math.max(0, prizes[0].count - winners.filter(w => w.prize === prizes[0].name).length);
             const secondPrizeLeft = Math.max(0, prizes[1].count - winners.filter(w => w.prize === prizes[1].name).length);
             const thirdPrizeLeft = Math.max(0, prizes[2].count - winners.filter(w => w.prize === prizes[2].name).length);
             document.getElementById('prizes-left').textContent = firstPrizeLeft + secondPrizeLeft + thirdPrizeLeft;
         }
 
-        // ���ػ�����
+        // 加载获奖名单
         function loadWinnersList() {
             const container = document.getElementById('winners-container');
             
             if (winners.length === 0) {
-                container.innerHTML = '<p style="text-align: center; padding: 20px; color: #666;">���޻�����</p>';
+                container.innerHTML = '<p style="text-align: center; padding: 20px; color: #666;">暂无获奖数据</p>';
                 return;
             }
             
-            // ����Ʒ���ͷ���
+            // 按奖品类型分组
             const prizeGroups = {};
             prizes.forEach(prize => {
                 prizeGroups[prize.name] = winners.filter(w => w.prize === prize.name);
@@ -1075,11 +1075,11 @@
             
             let html = '';
             
-            // ��ʾÿ������Ļ���
+            // 显示每个奖项的获奖者
             prizes.forEach(prize => {
                 const groupWinners = prizeGroups[prize.name];
                 if (groupWinners.length > 0) {
-                    html += `<h4 style="color: ${prize.color}; margin: 15px 0 10px 0;">${prize.name} (${groupWinners.length}��)</h4>`;
+                    html += `<h4 style="color: ${prize.color}; margin: 15px 0 10px 0;">${prize.name} (${groupWinners.length}人)</h4>`;
                     
                     groupWinners.forEach(winner => {
                         const time = new Date(winner.winTime).toLocaleString('zh-CN');
@@ -1099,25 +1099,26 @@
             container.innerHTML = html;
         }
 
-        // ҳ���ʼ��
+        // 页面初始化
         function init() {
-            // ��ʼ������ҳ��
+            // 初始化各个页面
             initUserInfoPage();
             initQuizPage();
             initLotteryPage();
             
-            // ��ʾ�û���Ϣҳ��
+            // 显示用户信息页面
             showPage('page-user-info');
             
-            // ���URL����������ǹ���Աģʽ
+            // 检查URL参数，如果是管理员模式
             const urlParams = new URLSearchParams(window.location.search);
             if (urlParams.get('admin') === 'true') {
                 showAdminPage();
             }
         }
 
-        // ҳ�������ɺ��ʼ��
+        // 页面加载完成后初始化
         document.addEventListener('DOMContentLoaded', init);
     </script>
 </body>
+
 </html>
